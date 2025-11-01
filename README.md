@@ -3,6 +3,9 @@
 **Paper:** Geologically Constrained Machine Learning for Hydraulic Flow Unit Identification in Tight Sandstone Reservoirs: A Case Study from the Shaximiao Formation, Zitong Area  
 **Authors:** Xiaolong He¹, Bing Zhang¹²*, Chuan Xu¹, Kai Yang¹, Yifan He¹, Zhuo Li¹, Dongxing Wang¹, Ken Cheng¹, Yangsen Gao¹
 
+¹Earth Exploration and Information Technology Key Laboratory of Ministry of Education, Chengdu University of Technology, Chengdu, Sichuan, China
+²State Key Laboratory of Oil and Gas Reservoir Geology and Exploitation, Chengdu University of Technology, Chengdu, Sichuan, China
+
 ---
 
 ## 1. Project Overview
