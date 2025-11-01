@@ -31,54 +31,33 @@ This work is based on the Shaximiao Formation, Zitong Area.
 ---
 
 ## 3. Data Description
-- `data/XGBoost_sample.txt` — Tab-separated file containing features and labels for HFU prediction.  
-- Columns include GR curve parameters and other petrophysical features.  
-- The `标签` column is the HFU class label.  
 
-> ⚠️ **Note:** Please check the data file for missing values (NA, /, etc.) before processing.
+This repository contains the following data files:
+
+| File Name                     | Description |
+|-------------------------------|-------------|
+| `Well stratification.txt`     | Well stratification information for each well. |
+| `Single-well GR.txt`          | Single-well GR curve data. |
+| `Morphological parameters.csv`| Morphological parameters of GR curves calculated per layer. |
+| `LOG(FZI).txt`                | Logarithmic values of Hydraulic Flow Units (HFU). |
+| `XGBoost_sample.txt`          | Dataset used for model training and testing (features + HFU labels). |
+
+> ⚠️ **Note:** Check the data files for missing values (NA, /, etc.) before processing.
 
 ---
 
 ## 4. Scripts
 
-| Script Name              | Description |
-|--------------------------|-------------|
-| `scripts/feature_processing.py` | Feature extraction from GR curves and other petrophysical properties. |
-| `scripts/XGBoost.py`     | Train XGBoost model for HFU prediction, includes SMOTETomek balancing and evaluation. |
-| `scripts/visualization.py` | Visualization of GR curves, HFU distributions, and model performance. |
+This repository contains the following Python scripts:
+
+| Script Name                       | Description |
+|----------------------------------|-------------|
+| `Morphological parameters.py`     | Computes morphological parameters of GR curves per layer. |
+| `HFU Division.py`                 | HFU classification based on petrophysical and GR data. |
+| `Hyperparameter Optimization.py`  | Hyperparameter optimization for XGBoost model with geological constraints. |
+| `XGBoost.py`                      | XGBoost model training and evaluation with geological constraints. |
+| `Hyperparameter Optimization_2.py`| Hyperparameter optimization for XGBoost model **without** geological constraints. |
+| `XGBoost_2.py`                     | XGBoost model training and evaluation **without** geological constraints. |
+
 
 ---
-
-## 5. Installation & Requirements
-
-```bash
-# Clone the repository
-git clone https://github.com/<username>/<repo>.git
-cd <repo>
-
-# Create environment (optional but recommended)
-conda create -n hfu_ml python=3.10
-conda activate hfu_ml
-
-# Install dependencies
-pip install pandas numpy matplotlib seaborn scikit-learn xgboost imbalanced-learn
-
-
-## 6. Usage Example
-
-# Example: train HFU model
-from scripts.XGBoost import train_model
-
-# Load data
-X, y = train_model.load_data("data/XGBoost_sample.txt")
-
-# Train and evaluate model
-model, results = train_model.train(X, y)
-
-# Plot model results
-train_model.plot_results(results)
-
-## 7. References
-
-He, X., Zhang, B., Xu, C., et al. (2025). Geologically Constrained Machine Learning for Hydraulic Flow Unit Identification in Tight Sandstone Reservoirs: A Case Study from the Shaximiao Formation, Zitong Area. Journal Name.
-
