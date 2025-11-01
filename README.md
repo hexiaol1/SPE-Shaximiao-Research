@@ -21,7 +21,9 @@ This work is based on the Shaximiao Formation, Zitong Area.
 ## 2. Repository Structure
 
 ├── data/ # Raw and processed datasets used in the study
+
 ├── scripts/ # Python scripts for data processing and modeling
+
 ├── README.md # Project description and usage instructions
 
 
